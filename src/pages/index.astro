@@ -1,7 +1,7 @@
 ---
 import '../index.css';
 
-const appTitle = 'JSON Compare';
+const appTitle = 'JSON Compare Online';
 ---
 
 <html lang="en">
@@ -10,9 +10,69 @@ const appTitle = 'JSON Compare';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Compare two JSON payloads with side-by-side diff and formatted views."
+      content="JSON Compare Online is a free JSON diff checker for comparing JSON files, objects, and nested structures instantly."
     />
-    <title>{appTitle}</title>
+    <link rel="canonical" href="https://comparejsononline.com/" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="JSON Compare Online | Free JSON Diff Checker" />
+    <meta property="og:description" content="Compare JSON online with a fast, free tool for JSON diff checking, nested JSON comparison, and side by side JSON compare." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://comparejsononline.com/" />
+    <meta property="og:image" content="https://comparejsononline.com/og-image.png" />
+    <meta property="og:site_name" content="JSON Compare Online" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="JSON Compare Online | Free JSON Diff Checker" />
+    <meta name="twitter:description" content="Compare JSON online with a fast, free tool for JSON diff checking, nested JSON comparison, and side by side JSON compare." />
+    <meta name="twitter:image" content="https://comparejsononline.com/og-image.png" />
+    <title>JSON Compare Online | Free JSON Diff Checker</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I compare two JSON files online for free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Paste your JSON files into the left and right editors, then click Compare to see side by side JSON differences instantly without signup."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I compare nested JSON objects and arrays?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, JSON Compare Online supports nested JSON objects and arrays so you can compare deep structures and identify actual differences clearly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this an online JSON diff checker for developers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, this tool is a developer-friendly online JSON diff checker designed for comparing JSON objects, JSON files, and API responses quickly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I compare JSON objects side by side?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Paste one JSON object in the left editor and another in the right editor, then click Compare to view both objects side by side with highlighted differences."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I compare JSON online without installing any software?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, JSON Compare Online runs entirely in the browser, making it a convenient online JSON comparison tool without downloads or installs."
+            }
+          }
+        ]
+      }
+    </script>
     <script is:inline>
       (() => {
         const stored = localStorage.getItem('theme');
@@ -26,9 +86,9 @@ const appTitle = 'JSON Compare';
   <body>
     <main class="min-h-screen bg-gray-50 text-gray-900 transition-colors dark:bg-gray-950 dark:text-gray-100">
       <div class="mx-auto max-w-5xl p-4 font-sans">
-        <header class="mb-4 flex flex-wrap items-center justify-between gap-2">
-          <h1 class="text-base font-semibold text-gray-900 dark:text-gray-100">{appTitle}</h1>
-          <div class="flex items-center gap-2">
+        <header class="mb-4 flex flex-wrap items-start justify-between gap-2">
+            <h1 class="text-base font-semibold text-gray-900 dark:text-gray-100">{appTitle}</h1>
+            <div class="flex items-center gap-2">
             <div class="flex gap-1.5 rounded-lg bg-gray-100 p-1 dark:bg-gray-800" role="tablist" aria-label="View mode">
               <button
                 id="diffMode"
@@ -45,7 +105,7 @@ const appTitle = 'JSON Compare';
                 Formatted view
               </button>
             </div>
-            <button
+          <button
               id="themeToggle"
               type="button"
               aria-label="Toggle color theme"
@@ -54,7 +114,32 @@ const appTitle = 'JSON Compare';
               <span id="themeIcon" aria-hidden="true"></span>
             </button>
           </div>
+
+           <div class="max-w-3xl">
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">JSON Compare Online</h1>
+            <p class="mt-4 text-base leading-8 text-gray-700 dark:text-gray-300">
+              JSON Compare Online helps developers, QA teams, and analysts compare JSON online with a fast, free JSON diff checker. Use our JSON comparison tool to compare two JSON files, inspect JSON objects online, and find actual differences instantly.
+            </p>
+            <nav class="mt-6 flex flex-wrap gap-3 text-sm font-medium text-gray-600 dark:text-gray-300">
+              <a href="/about-us" class="hover:text-gray-900 dark:hover:text-white">About Us</a>
+              <a href="/contact-us" class="hover:text-gray-900 dark:hover:text-white">Contact Us</a>
+              <a href="/privacy-policy" class="hover:text-gray-900 dark:hover:text-white">Privacy Policy</a>
+              <a href="/terms-and-conditions" class="hover:text-gray-900 dark:hover:text-white">Terms &amp; Conditions</a>
+            </nav>
+            <div class="mt-6 grid gap-3 sm:grid-cols-2">
+              <div class="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+                <p class="text-sm font-semibold text-blue-600 dark:text-blue-400">Free JSON compare tool</p>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Compare nested JSON objects, arrays, and structures without account setup.</p>
+              </div>
+              <div class="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+                <p class="text-sm font-semibold text-blue-600 dark:text-blue-400">Side by side JSON compare</p>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Visualize differences clearly with side by side JSON comparison and diff highlights.</p>
+              </div>
+            </div>
+          </div>
+         
         </header>
+
 
         <section class="mb-3 grid grid-cols-1 gap-3 md:grid-cols-2" aria-label="JSON inputs">
           <div>
@@ -144,10 +229,149 @@ const appTitle = 'JSON Compare';
             </button>
           </div>
         </section>
+           <section id="output" aria-live="polite"></section>
 
-        <section id="output" aria-live="polite"></section>
+        <section class="mb-8 mt-4 rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Why choose our JSON comparison tool?</h2>
+          <p class="mt-4 text-gray-700 dark:text-gray-300">
+            JSON Compare Online is designed for fast, accurate comparisons of JSON files online. Whether you need a json diff checker for API responses, configuration files, or nested JSON objects, this json comparison tool helps you identify changes without confusion.
+          </p>
+          <div class="mt-6 grid gap-4 lg:grid-cols-3">
+            <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-900">
+              <h3 class="text-base font-semibold text-gray-900 dark:text-gray-100">Instant comparison</h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Paste JSON, click compare, and review the result in seconds.</p>
+            </div>
+            <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-900">
+              <h3 class="text-base font-semibold text-gray-900 dark:text-gray-100">Nested JSON support</h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Compare nested JSON objects and arrays with clear diff output.</p>
+            </div>
+            <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-900">
+              <h3 class="text-base font-semibold text-gray-900 dark:text-gray-100">No signup needed</h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Use the free JSON compare utility instantly from any browser.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-8 rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Features of JSON Compare Online</h2>
+          <p class="mt-4 text-gray-700 dark:text-gray-300">Our json compare tool is built to help you compare json online with clarity and speed. From compare json files online to json diff checker workflows, every feature is focused on making JSON comparison easier for developers and QA teams.</p>
+          <ul class="mt-6 space-y-4 text-gray-700 dark:text-gray-300 list-disc pl-5">
+            <li><strong>Side by side JSON compare</strong> for easy visual diffing between JSON A and JSON B.</li>
+            <li><strong>Compare nested JSON objects</strong> including arrays, nested values, and complex payloads.</li>
+            <li><strong>JSON diff online</strong> with clear highlighting of additions, removals, and updates.</li>
+            <li><strong>JSON validator and compare</strong> so you can check structure while comparing content.</li>
+            <li><strong>Free JSON compare tool</strong> that works directly in your browser without installs.</li>
+          </ul>
+        </section>
+
+        <section class="mb-8 rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">How JSON Compare Online works</h2>
+          <p class="mt-4 text-gray-700 dark:text-gray-300">Using this json comparison online tool is simple and fast. Follow the steps below to compare two json files or raw JSON objects and find actual differences with confidence.</p>
+          <div class="mt-6 space-y-5 text-gray-700 dark:text-gray-300">
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Step 1: Paste your JSON</h3>
+              <p class="mt-2">Insert the first JSON payload into the left editor and the second JSON payload into the right editor. You can compare JSON objects online, JSON files, or API response payloads.</p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Step 2: Click Compare</h3>
+              <p class="mt-2">The tool processes the JSON and shows a highlighted diff. This json difference checker is optimized to preserve the structure and show changes clearly.</p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Step 3: Review the results</h3>
+              <p class="mt-2">Inspect the differences, validate nested JSON objects, and use the summary information to understand what changed.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-8 rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Common use cases</h2>
+          <div class="mt-6 grid gap-4 lg:grid-cols-2 text-gray-700 dark:text-gray-300">
+            <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-900">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">API response comparison</h3>
+              <p class="mt-2">Compare JSON output from different environments or versions to verify API changes quickly.</p>
+            </div>
+            <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-900">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Configuration file diff</h3>
+              <p class="mt-2">Review JSON-based config files side by side and ensure settings match expected values.</p>
+            </div>
+            <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-900">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Development troubleshooting</h3>
+              <p class="mt-2">Use the json diff online utility to detect subtle data changes during debugging and testing.</p>
+            </div>
+            <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-900">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Data migration checks</h3>
+              <p class="mt-2">Compare source and target JSON objects to confirm reliable data migration and transformation.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-8 rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Benefits for developers</h2>
+          <p class="mt-4 text-gray-700 dark:text-gray-300">JSON Compare Online is designed to help developers move faster and avoid errors. With a clean interface, free access, and strong json comparison functionality, it’s the go-to json compare utility for web development teams.</p>
+          <div class="mt-6 grid gap-4 lg:grid-cols-3 text-gray-700 dark:text-gray-300">
+            <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-900">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Faster debugging</h3>
+              <p class="mt-2">Identify differences faster so you can fix issues without guessing.</p>
+            </div>
+            <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-900">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Better collaboration</h3>
+              <p class="mt-2">Share consistent JSON comparisons across teams for cleaner reviews.</p>
+            </div>
+            <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-900">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Trusted accuracy</h3>
+              <p class="mt-2">See actual differences in nested JSON instead of relying on raw line-by-line comparisons.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-8 rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Frequently asked questions</h2>
+          <div class="mt-6 space-y-5 text-gray-700 dark:text-gray-300">
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">How do I compare two JSON files online for free?</h3>
+              <p class="mt-2">Paste your JSON files into the left and right editors, then click Compare. The tool shows a clear JSON diff with side by side comparison and no signup required.</p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Can I compare nested JSON objects and arrays?</h3>
+              <p class="mt-2">Yes, this tool supports nested JSON objects and arrays so you can compare complex JSON structures and identify exact differences in deep data.</p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Is this a reliable JSON diff checker for developers?</h3>
+              <p class="mt-2">Absolutely. JSON Compare Online is built for developers, QA teams, and analysts who need a reliable online JSON comparison tool for real-world use cases.</p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">How do I compare JSON objects side by side?</h3>
+              <p class="mt-2">Paste one JSON object into the left editor and another into the right editor, then use Compare to view both objects side by side with difference highlights.</p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Can I compare JSON online without installing any software?</h3>
+              <p class="mt-2">Yes, JSON Compare Online works entirely in the browser, making it a fast and convenient online JSON comparison tool without downloads.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-8 rounded-3xl border border-blue-300 bg-blue-50 p-6 shadow-sm dark:border-blue-700 dark:bg-blue-950">
+          <h2 class="text-2xl font-semibold text-blue-900 dark:text-blue-200">Start comparing JSON online now</h2>
+          <p class="mt-4 text-gray-700 dark:text-gray-300">Ready to use the most reliable json compare online tool? Paste your JSON A and JSON B, click Compare, and see all differences clearly. It’s the fastest way to compare JSON objects online and validate your data.</p>
+          <div class="mt-6">
+            <a href="#jsonA" class="inline-flex rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400">Start Comparing JSON</a>
+          </div>
+        </section>
+       
       </div>
     </main>
+
+    <footer class="border-t border-gray-200 bg-white py-6 dark:border-gray-800 dark:bg-gray-950">
+      <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-4 text-sm text-gray-600 dark:text-gray-400">
+        <p>© 2026 JSON Compare Online</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/about-us" class="hover:text-gray-900 dark:hover:text-white">About Us</a>
+          <a href="/contact-us" class="hover:text-gray-900 dark:hover:text-white">Contact Us</a>
+          <a href="/privacy-policy" class="hover:text-gray-900 dark:hover:text-white">Privacy Policy</a>
+          <a href="/terms-and-conditions" class="hover:text-gray-900 dark:hover:text-white">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </footer>
 
     <script>
       const API_BASE = 'http://127.0.0.1:8000/json';
