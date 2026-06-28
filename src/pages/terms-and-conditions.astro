@@ -12,9 +12,18 @@ const pageTitle = 'Terms & Conditions';
       content="Review the Terms & Conditions for JSON Compare Online, including usage rules for our free JSON comparison tool."
     />
     <link rel="canonical" href="https://comparejsononline.com/terms-and-conditions" />
+    <script is:inline>
+      (() => {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (stored === 'dark' || (!stored && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100">
-    <main class="mx-auto max-w-5xl p-6 font-sans">
+    <main class="min-h-screen mx-auto max-w-5xl px-4 py-6 sm:px-6 font-sans transition-colors duration-300">
       <a href="/" class="text-sm font-medium text-blue-600 hover:text-blue-800 dark:text-blue-400">← Back to Home</a>
       <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Terms &amp; Conditions</h1>
       <p class="mt-4 text-gray-700 dark:text-gray-300">

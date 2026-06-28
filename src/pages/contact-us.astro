@@ -12,9 +12,18 @@ const pageTitle = 'Contact Us';
       content="Contact JSON Compare Online for feedback, support, or questions about the free online JSON comparison tool."
     />
     <link rel="canonical" href="https://comparejsononline.com/contact-us" />
+    <script is:inline>
+      (() => {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (stored === 'dark' || (!stored && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100">
-    <main class="mx-auto max-w-5xl p-6 font-sans">
+    <main class="min-h-screen mx-auto max-w-5xl px-4 py-6 sm:px-6 font-sans transition-colors duration-300">
       <a href="/" class="text-sm font-medium text-blue-600 hover:text-blue-800 dark:text-blue-400">← Back to Home</a>
       <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Contact Us</h1>
       <p class="mt-4 text-gray-700 dark:text-gray-300">
