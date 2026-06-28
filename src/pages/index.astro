@@ -2,77 +2,115 @@
 import '../index.css';
 
 const appTitle = 'JSON Compare Online';
+
+const faqs = [
+  {
+    question: 'What is a JSON file?',
+    answer:
+      'A JSON file is a plain-text file that stores structured data in JavaScript Object Notation (JSON) format. It typically uses a .json extension and contains key-value pairs, arrays, strings, numbers, booleans, and nested objects. JSON files are widely used to exchange data between web applications, APIs, and configuration systems because they are lightweight, human-readable, and easy for programs to parse and compare.',
+  },
+  {
+    question: 'What is JSON?',
+    answer:
+      'JSON (JavaScript Object Notation) is a lightweight, text-based data format used to represent structured information. It organizes data using key-value pairs, arrays, strings, numbers, booleans, and null values. Although JSON derives from JavaScript syntax, virtually every modern programming language can read and write it, making JSON the standard format for REST APIs, mobile apps, and web services worldwide.',
+  },
+  {
+    question: 'What is the difference between XML and JSON?',
+    answer:
+      'XML and JSON both store structured data, but JSON is simpler and more compact. JSON uses curly braces, colons, and brackets, while XML relies on nested tags and attributes. JSON is typically smaller, faster to parse, and maps naturally to objects in JavaScript and other languages. XML supports richer document features and schemas but is heavier. Most modern APIs and web applications prefer JSON for speed, readability, and easier integration.',
+  },
+  {
+    question: 'How to open a JSON file?',
+    answer:
+      'You can open a JSON file with any text editor such as Notepad, VS Code, or Sublime Text to view and edit its contents directly. Most code editors provide syntax highlighting that makes the JSON format easier to read. You can also open JSON files in a web browser, use online JSON viewers, or paste the content into a JSON compare tool to validate structure, format the data, and inspect differences between two JSON files.',
+  },
+  {
+    question: 'What is JSON format?',
+    answer:
+      'The JSON format is a standardized way of writing data using plain text. It is built on two core structures: objects (unordered collections of key-value pairs enclosed in curly braces) and arrays (ordered lists enclosed in square brackets). Values can be strings, numbers, booleans, null, objects, or arrays. Strict JSON syntax rules—such as double quotes around keys and strings—ensure consistent, machine-readable data exchange across platforms.',
+  },
+  {
+    question: 'What does JSON stand for?',
+    answer:
+      'JSON stands for JavaScript Object Notation. It was originally based on a subset of JavaScript object literal syntax but has evolved into a language-independent data format. The name reflects its roots in JavaScript, yet JSON is now used across Python, Java, C#, PHP, and countless other languages as the primary way to send and receive structured data over the internet.',
+  },
+  {
+    question: 'What is a .json file?',
+    answer:
+      'A .json file is a file whose extension indicates it contains data in JSON format. Like other text files, it can be opened, copied, and edited with standard tools. Developers commonly use .json files for configuration settings, API responses, package definitions (such as package.json), and data exports. The .json extension helps operating systems and applications identify the file type and handle it correctly.',
+  },
+  {
+    question: 'What are JSON files?',
+    answer:
+      'JSON files are plain-text documents that store structured data in JSON format. They commonly hold configuration details, API payloads, database exports, and application settings. Because JSON files use a simple, readable syntax, both humans and machines can work with them easily. They are a backbone of modern web development, powering everything from REST APIs and cloud services to mobile app data synchronization.',
+  },
+  {
+    question: 'How do I compare two JSON files online for free?',
+    answer:
+      'Paste your JSON files into the left and right editors, then click Compare to see side by side JSON differences instantly without signup.',
+  },
+  {
+    question: 'Can I compare nested JSON objects and arrays?',
+    answer:
+      'Yes, JSON Compare Online supports nested JSON objects and arrays so you can compare deep structures and identify actual differences clearly.',
+  },
+  {
+    question: 'Is this an online JSON diff checker for developers?',
+    answer:
+      'Yes, this tool is a developer-friendly online JSON diff checker designed for comparing JSON objects, JSON files, and API responses quickly.',
+  },
+  {
+    question: 'How do I compare JSON objects side by side?',
+    answer:
+      'Paste one JSON object in the left editor and another in the right editor, then click Compare to view both objects side by side with highlighted differences.',
+  },
+  {
+    question: 'Can I compare JSON online without installing any software?',
+    answer:
+      'Yes, JSON Compare Online runs entirely in the browser, making it a convenient online JSON comparison tool without downloads or installs.',
+  },
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: answer,
+    },
+  })),
+});
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="JSON Compare Online is a free JSON diff checker for comparing JSON files, objects, and nested structures instantly."
-    />
+    <title>JSON Compare Online - Free JSON Diff & Compare Tool</title>
+    <meta name="description" content="Compare two JSON files online for free. Highlight differences, validate JSON, and compare JSON objects side by side with our fast JSON Compare tool." />
+    <meta name="keywords" content="json compare, json compare online, compare json, compare two json files, json diff, json comparison tool, compare json objects, online json compare" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="json" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="canonical" href="https://comparejsononline.com/" />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="JSON Compare Online | Free JSON Diff Checker" />
-    <meta property="og:description" content="Compare JSON online with a fast, free tool for JSON diff checking, nested JSON comparison, and side by side JSON compare." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://comparejsononline.com/" />
+    <meta property="og:title" content="JSON Compare Online - Free JSON Diff & Compare Tool" />
+    <meta property="og:description" content="Compare JSON files instantly with our free online JSON Compare tool. Find differences, validate JSON, and compare JSON objects with ease." />
+    <meta property="og:url" content="https://comparejsononline.com" />
     <meta property="og:image" content="https://comparejsononline.com/og-image.png" />
     <meta property="og:site_name" content="JSON Compare Online" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="JSON Compare Online | Free JSON Diff Checker" />
-    <meta name="twitter:description" content="Compare JSON online with a fast, free tool for JSON diff checking, nested JSON comparison, and side by side JSON compare." />
+    <meta name="twitter:title" content="JSON Compare Online - Free JSON Diff & Compare Tool" />
+    <meta name="twitter:description" content="Free online JSON comparison tool to compare JSON files and objects with highlighted differences." />
     <meta name="twitter:image" content="https://comparejsononline.com/og-image.png" />
-    <title>JSON Compare Online | Free JSON Diff Checker</title>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How do I compare two JSON files online for free?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Paste your JSON files into the left and right editors, then click Compare to see side by side JSON differences instantly without signup."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I compare nested JSON objects and arrays?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, JSON Compare Online supports nested JSON objects and arrays so you can compare deep structures and identify actual differences clearly."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is this an online JSON diff checker for developers?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, this tool is a developer-friendly online JSON diff checker designed for comparing JSON objects, JSON files, and API responses quickly."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I compare JSON objects side by side?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Paste one JSON object in the left editor and another in the right editor, then click Compare to view both objects side by side with highlighted differences."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I compare JSON online without installing any software?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, JSON Compare Online runs entirely in the browser, making it a convenient online JSON comparison tool without downloads or installs."
-            }
-          }
-        ]
-      }
-    </script>
+    <script type="application/ld+json" set:html={faqSchema} />
     <script is:inline>
       (() => {
         const stored = localStorage.getItem('theme');
@@ -89,7 +127,10 @@ const appTitle = 'JSON Compare Online';
         <header class="mb-8">
           <div class="flex flex-col items-center gap-4 sm:gap-6">
             <div class="flex w-full flex-wrap items-center justify-between gap-6 px-2 text-center sm:gap-8 sm:px-0">
-              <h1 class="text-base font-semibold text-gray-900 dark:text-gray-100">{appTitle}</h1>
+              <div class="flex items-center justify-center gap-2">
+                <img src="/logo.png" alt="JSON Compare logo" class="h-9 w-9 rounded-lg" />
+                <h1 class="text-base font-semibold text-gray-900 dark:text-gray-100">{appTitle}</h1>
+              </div>
               <nav id="mainNav" class="hidden justify-center gap-4 text-sm font-medium text-gray-600 dark:text-gray-300 sm:flex">
                 <a href="/about-us" class="hover:text-gray-900 dark:hover:text-white">About Us</a>
                 <a href="/contact-us" class="hover:text-gray-900 dark:hover:text-white">Contact Us</a>
@@ -120,7 +161,7 @@ const appTitle = 'JSON Compare Online';
             </div>
             <div id="mobileMenu" class="fixed inset-0 z-50 hidden bg-white/95 p-6 backdrop-blur-md dark:bg-slate-950/95 sm:hidden">
               <div class="flex items-center justify-between">
-                <span class="text-sm font-semibold text-gray-900 dark:text-gray-100">Menu</span>
+                <img src="/logo.png" alt="JSON Compare logo" class="h-8 w-8 rounded-lg" />
                 <button
                   id="menuClose"
                   type="button"
@@ -368,29 +409,18 @@ const appTitle = 'JSON Compare Online';
           </div>
         </section>
 
-        <section class="mb-8 rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
-          <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Frequently asked questions</h2>
+        <section class="mb-8 rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950" aria-labelledby="faq-heading">
+          <h2 id="faq-heading" class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Frequently asked questions</h2>
+          <p class="mt-4 text-gray-700 dark:text-gray-300">
+            Learn what JSON is, how JSON files work, and how to compare JSON online with our free diff tool.
+          </p>
           <div class="mt-6 space-y-5 text-gray-700 dark:text-gray-300">
-            <div>
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">How do I compare two JSON files online for free?</h3>
-              <p class="mt-2">Paste your JSON files into the left and right editors, then click Compare. The tool shows a clear JSON diff with side by side comparison and no signup required.</p>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Can I compare nested JSON objects and arrays?</h3>
-              <p class="mt-2">Yes, this tool supports nested JSON objects and arrays so you can compare complex JSON structures and identify exact differences in deep data.</p>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Is this a reliable JSON diff checker for developers?</h3>
-              <p class="mt-2">Absolutely. JSON Compare Online is built for developers, QA teams, and analysts who need a reliable online JSON comparison tool for real-world use cases.</p>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">How do I compare JSON objects side by side?</h3>
-              <p class="mt-2">Paste one JSON object into the left editor and another into the right editor, then use Compare to view both objects side by side with difference highlights.</p>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Can I compare JSON online without installing any software?</h3>
-              <p class="mt-2">Yes, JSON Compare Online works entirely in the browser, making it a fast and convenient online JSON comparison tool without downloads.</p>
-            </div>
+            {faqs.map(({ question, answer }) => (
+              <article>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">{question}</h3>
+                <p class="mt-2">{answer}</p>
+              </article>
+            ))}
           </div>
         </section>
 
@@ -460,7 +490,19 @@ const appTitle = 'JSON Compare Online';
         ],
       };
 
-      const state = {
+      type JsonPrimitive = null | boolean | number | string;
+      type JsonValue = JsonPrimitive | { [key: string]: JsonValue } | JsonValue[];
+      type MaybeJson = JsonValue | null | undefined;
+
+      interface AppState {
+        dataA: MaybeJson;
+        dataB: MaybeJson;
+        mode: 'diff' | 'card';
+        expanded: Set<string>;
+        allPaths: string[];
+      }
+
+      const state: AppState = {
         dataA: null,
         dataB: null,
         mode: 'diff',
@@ -468,43 +510,117 @@ const appTitle = 'JSON Compare Online';
         allPaths: [],
       };
 
-      const $ = (selector) => document.querySelector(selector);
+      const $ = (selector: string): HTMLElement | null => document.querySelector(selector);
       const els = {
-        jsonA: $('#jsonA'),
-        jsonB: $('#jsonB'),
-        errA: $('#errA'),
-        errB: $('#errB'),
-        toggleInputs: $('#toggleInputs'),
-        inputSection: $('#inputSection'),
-        diffMode: $('#diffMode'),
-        cardMode: $('#cardMode'),
-        themeToggle: $('#themeToggle'),
-        themeIcon: $('#themeIcon'),
-        menuToggle: $('#menuToggle'),
-        menuClose: $('#menuClose'),
-        mobileMenu: $('#mobileMenu'),
-        mainNav: $('#mainNav'),
-        loadSample: $('#loadSample'),
-        compare: $('#compare'),
-        swap: $('#swap'),
-        clear: $('#clear'),
-        share: $('#share'),
-        newSession: $('#newSession'),
-        shareError: $('#shareError'),
-        shareUrl: $('#shareUrl'),
-        summary: $('#summary'),
-        changeBadge: $('#changeBadge'),
-        expandAll: $('#expandAll'),
-        collapseAll: $('#collapseAll'),
-        output: $('#output'),
+        jsonA: document.querySelector('#jsonA') as HTMLTextAreaElement,
+        jsonB: document.querySelector('#jsonB') as HTMLTextAreaElement,
+        errA: document.querySelector('#errA') as HTMLElement,
+        errB: document.querySelector('#errB') as HTMLElement,
+        toggleInputs: document.querySelector('#toggleInputs') as HTMLButtonElement,
+        inputSection: document.querySelector('#inputSection') as HTMLElement,
+        diffMode: document.querySelector('#diffMode') as HTMLButtonElement,
+        cardMode: document.querySelector('#cardMode') as HTMLButtonElement,
+        themeToggle: document.querySelector('#themeToggle') as HTMLButtonElement,
+        themeIcon: document.querySelector('#themeIcon') as HTMLElement,
+        menuToggle: document.querySelector('#menuToggle') as HTMLButtonElement,
+        menuClose: document.querySelector('#menuClose') as HTMLElement,
+        mobileMenu: document.querySelector('#mobileMenu') as HTMLElement,
+        mainNav: document.querySelector('#mainNav') as HTMLElement,
+        loadSample: document.querySelector('#loadSample') as HTMLButtonElement,
+        compare: document.querySelector('#compare') as HTMLButtonElement,
+        swap: document.querySelector('#swap') as HTMLButtonElement,
+        clear: document.querySelector('#clear') as HTMLButtonElement,
+        share: document.querySelector('#share') as HTMLButtonElement,
+        newSession: document.querySelector('#newSession') as HTMLButtonElement,
+        shareError: document.querySelector('#shareError') as HTMLElement,
+        shareUrl: document.querySelector('#shareUrl') as HTMLElement,
+        summary: document.querySelector('#summary') as HTMLElement,
+        changeBadge: document.querySelector('#changeBadge') as HTMLElement,
+        expandAll: document.querySelector('#expandAll') as HTMLButtonElement,
+        collapseAll: document.querySelector('#collapseAll') as HTMLButtonElement,
+        output: document.querySelector('#output') as HTMLElement,
       };
 
-      const deepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
-      const arrToObj = (arr) => arr.reduce((obj, value, index) => ({ ...obj, [index]: value }), {});
-      const titleCase = (key) => key.replace(/_/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
-      const isObject = (value) => value && typeof value === 'object';
+      let deepEqualCache = new WeakMap<object, WeakMap<object, boolean>>();
 
-      function escapeHtml(value) {
+      const deepEqual = (function () {
+        function isPrimitiveValue(x: unknown) {
+          return x === null || x === undefined || typeof x !== 'object';
+        }
+
+        function eq(a: MaybeJson, b: MaybeJson, seen: WeakMap<object, WeakSet<object>>): boolean {
+          if (a === b) return true;
+          if (isPrimitiveValue(a) || isPrimitiveValue(b)) return a === b;
+
+          if (Array.isArray(a) || Array.isArray(b)) {
+            if (!Array.isArray(a) || !Array.isArray(b)) return false;
+            if (a.length !== b.length) return false;
+            for (let i = 0; i < a.length; i += 1) {
+              if (!eq(a[i] as JsonValue, b[i] as JsonValue, seen)) return false;
+            }
+            return true;
+          }
+
+            // both are non-array objects
+            const aObj = a as Record<string, JsonValue>;
+            const bObj = b as Record<string, JsonValue>;
+
+            // check result cache for previously computed equality
+            let outer = deepEqualCache.get(aObj as object);
+            if (outer) {
+              const cached = outer.get(bObj as object);
+              if (cached !== undefined) return cached;
+            } else {
+              outer = new WeakMap<object, boolean>();
+              deepEqualCache.set(aObj as object, outer);
+            }
+
+            let mapped = seen.get(aObj as object);
+            if (mapped && mapped.has(bObj as object)) return true;
+            if (!mapped) {
+              mapped = new WeakSet<object>();
+              seen.set(aObj as object, mapped);
+            }
+            mapped.add(bObj as object);
+
+            const aKeys = Object.keys(aObj);
+            const bKeys = Object.keys(bObj);
+            if (aKeys.length !== bKeys.length) {
+              outer.set(bObj as object, false);
+              return false;
+            }
+            for (let i = 0; i < aKeys.length; i += 1) {
+              const key = aKeys[i];
+              if (!Object.prototype.hasOwnProperty.call(bObj, key)) {
+                outer.set(bObj as object, false);
+                return false;
+              }
+              if (!eq(aObj[key], bObj[key], seen)) {
+                outer.set(bObj as object, false);
+                return false;
+              }
+            }
+            outer.set(bObj as object, true);
+            return true;
+        }
+
+        return (a: MaybeJson, b: MaybeJson): boolean => eq(a, b, deepEqualCacheWrapper());
+      })();
+
+      function deepEqualCacheWrapper() {
+        // provide the current cache for this comparison run; if empty, create a new seen map
+        return new WeakMap<object, WeakSet<object>>();
+      }
+      const arrToObj = (arr: JsonValue[]): Record<string, JsonValue> =>
+        arr.reduce<Record<string, JsonValue>>((obj, value, index) => {
+          obj[String(index)] = value;
+          return obj;
+        }, {});
+      const titleCase = (key: string): string => key.replace(/_/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
+      const isObject = (value: MaybeJson): value is Record<string, JsonValue> =>
+        value !== null && value !== undefined && !Array.isArray(value) && typeof value === 'object';
+
+      function escapeHtml(value: string | number | boolean | null | undefined): string {
         return String(value)
           .replaceAll('&', '&amp;')
           .replaceAll('<', '&lt;')
@@ -513,70 +629,87 @@ const appTitle = 'JSON Compare Online';
           .replaceAll("'", '&#039;');
       }
 
-      function primitive(value) {
+      function primitive(value: JsonValue | undefined): string {
         if (value === null || value === undefined) return '<span class="text-gray-400">-</span>';
         if (typeof value === 'boolean') {
           const color = value ? 'text-green-600' : 'text-red-600';
           return `<span class="${color}">${String(value)}</span>`;
         }
-        return `<span>${escapeHtml(value)}</span>`;
+        if (typeof value === 'number') {
+          return `<span>${value}</span>`;
+        }
+        if (typeof value === 'string') {
+          return `<span>${escapeHtml(value)}</span>`;
+        }
+        return `<span>${escapeHtml(JSON.stringify(value))}</span>`;
       }
 
-      function getChangedKeys(before = {}, after = {}) {
-        const keys = new Set([...Object.keys(before || {}), ...Object.keys(after || {})]);
-        return [...keys].reduce((changed, key) => {
-          if (!deepEqual(before?.[key], after?.[key])) changed.add(key);
+      function getChangedKeys(
+        before: { [key: string]: JsonValue } = {},
+        after: { [key: string]: JsonValue } = {},
+      ): Set<string> {
+        const keys = new Set([...Object.keys(before), ...Object.keys(after)]);
+        return [...keys].reduce<Set<string>>((changed, key) => {
+          if (!deepEqual(before[key], after[key])) changed.add(key);
           return changed;
         }, new Set());
       }
 
-      function countChanges(before = {}, after = {}) {
-        let count = 0;
-        const left = before || {};
-        const right = after || {};
-        const keys = new Set([...Object.keys(left), ...Object.keys(right)]);
-        keys.forEach((key) => {
-          const a = left[key];
-          const b = right[key];
-          if (deepEqual(a, b)) return;
-          if (Array.isArray(a) || Array.isArray(b)) {
-            const leftArray = a || [];
-            const rightArray = b || [];
-            const length = Math.max(leftArray.length, rightArray.length);
-            for (let index = 0; index < length; index += 1) {
-              const leftItem = leftArray[index];
-              const rightItem = rightArray[index];
-              if (isObject(leftItem) && isObject(rightItem)) {
-                count += countChanges(leftItem, rightItem);
-              } else if (!deepEqual(leftItem, rightItem)) {
-                count += 1;
-              }
+      function countChanges(before: MaybeJson, after: MaybeJson): number {
+        if (deepEqual(before, after)) return 0;
+        if (Array.isArray(before) || Array.isArray(after)) {
+          const leftArray = Array.isArray(before) ? before : [];
+          const rightArray = Array.isArray(after) ? after : [];
+          let count = 0;
+          const length = Math.max(leftArray.length, rightArray.length);
+          for (let index = 0; index < length; index += 1) {
+            const leftItem = leftArray[index];
+            const rightItem = rightArray[index];
+            if (isObject(leftItem) && isObject(rightItem)) {
+              count += countChanges(leftItem, rightItem);
+            } else if (!deepEqual(leftItem, rightItem)) {
+              count += 1;
             }
-          } else if (isObject(a) && isObject(b)) {
-            count += countChanges(a, b);
-          } else {
-            count += 1;
           }
-        });
-        return count;
+          return count;
+        }
+
+        if (isObject(before) && isObject(after)) {
+          let count = 0;
+          const keys = new Set([...Object.keys(before), ...Object.keys(after)]);
+          keys.forEach((key) => {
+            const a = before[key];
+            const b = after[key];
+            if (deepEqual(a, b)) return;
+            if (Array.isArray(a) || Array.isArray(b) || (isObject(a) && isObject(b))) {
+              count += countChanges(a, b);
+            } else {
+              count += 1;
+            }
+          });
+          return count;
+        }
+
+        return 1;
       }
 
-      function hasChanges(a, b) {
+      function hasChanges(a: MaybeJson, b: MaybeJson): boolean {
         return countChanges(a, b) > 0;
       }
 
-      function collectChangedPaths(obj, other, path, acc) {
+      function collectChangedPaths(obj: MaybeJson, other: MaybeJson, path: string, acc: Set<string>): void {
         if (!isObject(obj)) return;
+        const otherObj = isObject(other) ? other : {};
         Object.keys(obj).forEach((key) => {
           const value = obj[key];
-          const otherValue = other?.[key];
+          const otherValue = otherObj[key];
           const nodePath = `${path}.${key}`;
           if (Array.isArray(value)) {
-            if (hasChanges(arrToObj(value), arrToObj(otherValue || []))) {
+            if (hasChanges(arrToObj(value), arrToObj(Array.isArray(otherValue) ? otherValue : []))) {
               acc.add(nodePath);
               value.forEach((item, index) => {
                 if (isObject(item)) {
-                  const otherItem = Array.isArray(otherValue) ? otherValue[index] : undefined;
+                  const otherItem = Array.isArray(otherValue) ? otherValue[index] : null;
                   if (hasChanges(item, otherItem)) {
                     const itemPath = `${nodePath}[${index}]`;
                     acc.add(itemPath);
@@ -592,11 +725,12 @@ const appTitle = 'JSON Compare Online';
         });
       }
 
-      function collectAllPaths(obj, other, path, acc) {
+      function collectAllPaths(obj: MaybeJson, other: MaybeJson, path: string, acc: Set<string>): void {
         if (!isObject(obj)) return;
+        const otherObj = isObject(other) ? other : {};
         Object.keys(obj).forEach((key) => {
           const value = obj[key];
-          const otherValue = other?.[key];
+          const otherValue = otherObj[key];
           const nodePath = `${path}.${key}`;
           if (Array.isArray(value)) {
             acc.add(nodePath);
@@ -604,32 +738,32 @@ const appTitle = 'JSON Compare Online';
               if (isObject(item)) {
                 const itemPath = `${nodePath}[${index}]`;
                 acc.add(itemPath);
-                collectAllPaths(item, Array.isArray(otherValue) ? otherValue[index] : undefined, itemPath, acc);
+                collectAllPaths(item, Array.isArray(otherValue) ? otherValue[index] : null, itemPath, acc);
               }
             });
           } else if (isObject(value)) {
             acc.add(nodePath);
-            collectAllPaths(value, otherValue, nodePath, acc);
+            collectAllPaths(value, otherValue ?? null, nodePath, acc);
           }
         });
       }
 
-      function chevron(path) {
+      function chevron(path: string): string {
         const rotation = state.expanded.has(path) ? 'rotate-90' : '';
         return `<svg class="h-3.5 w-3.5 shrink-0 text-gray-400 transition-transform ${rotation}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path></svg>`;
       }
 
-      function changedPill(label) {
+      function changedPill(label: string | number): string {
         return `<span class="ml-1.5 rounded-full bg-amber-100 px-1.5 py-0.5 text-[10px] text-amber-800 dark:bg-amber-900 dark:text-amber-200">${label}</span>`;
       }
 
-      function diffRows(obj, counterpart, depth, side, path) {
+      function diffRows(obj: MaybeJson, counterpart: MaybeJson, depth: number, side: 'a' | 'b', path: string): string {
         if (!isObject(obj)) return '';
-        const changedKeys = getChangedKeys(obj, counterpart);
+        const changedKeys = getChangedKeys(obj, isObject(counterpart) ? counterpart : {});
         return Object.keys(obj)
           .map((key) => {
             const value = obj[key];
-            const otherValue = counterpart?.[key];
+            const otherValue = isObject(counterpart) ? counterpart[key] : null;
             const isChanged = changedKeys.has(key);
             const nodePath = `${path}.${key}`;
             const padding = depth * 16 + 14;
@@ -637,11 +771,11 @@ const appTitle = 'JSON Compare Online';
 
             if (Array.isArray(value)) {
               const open = state.expanded.has(nodePath);
-              const changeCount = countChanges(arrToObj(value), arrToObj(otherValue || []));
+              const changeCount = countChanges(arrToObj(value), arrToObj(Array.isArray(otherValue) ? otherValue : []));
               const children = open
                 ? value
                     .map((item, index) => {
-                      const otherItem = Array.isArray(otherValue) ? otherValue[index] : undefined;
+                      const otherItem = Array.isArray(otherValue) ? otherValue[index] : null;
                       const itemPath = `${nodePath}[${index}]`;
                       if (isObject(item)) {
                         const itemOpen = state.expanded.has(itemPath);
@@ -650,10 +784,10 @@ const appTitle = 'JSON Compare Online';
                           <button type="button" data-toggle="${itemPath}" class="flex w-full items-center gap-1 border-b border-gray-200 px-2.5 py-1 text-left text-[11px] text-gray-400 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800/50">
                             ${chevron(itemPath)}<span>[${index}]</span>${itemChanged ? changedPill('changed') : ''}
                           </button>
-                          ${itemOpen ? diffRows(item, otherItem, 0, side, itemPath) : ''}
+                          ${itemOpen ? diffRows(item, otherItem ?? null, 0, side, itemPath) : ''}
                         </div>`;
                       }
-                      const rowChanged = !deepEqual(item, otherItem);
+                      const rowChanged = !deepEqual(item, otherItem ?? null);
                       return `<div class="flex min-h-[22px] items-start border-l-2 py-0.5 font-mono text-[12.5px] ${rowChanged ? 'border-amber-400 bg-amber-50 dark:bg-amber-950/30' : 'border-transparent'}" style="padding-left:${padding + 16}px">
                         <span class="mr-1.5 text-gray-500 dark:text-gray-400">[${index}]</span>${primitive(item)}
                       </div>`;
@@ -669,11 +803,11 @@ const appTitle = 'JSON Compare Online';
 
             if (isObject(value)) {
               const open = state.expanded.has(nodePath);
-              const changeCount = countChanges(value, otherValue);
+              const changeCount = countChanges(value, otherValue ?? null);
               return `<div>
                 <button type="button" data-toggle="${nodePath}" class="${rowBase} w-full cursor-pointer text-left hover:bg-gray-50 dark:hover:bg-gray-800/50" style="padding-left:${padding}px">
                   ${chevron(nodePath)}<span class="ml-1 mr-1.5 text-gray-500 dark:text-gray-400">${escapeHtml(key)}:</span><span class="text-gray-400">{}</span>${changeCount > 0 ? changedPill(`${changeCount} changed`) : ''}
-                </button>${open ? diffRows(value, otherValue, depth + 1, side, nodePath) : ''}
+                </button>${open ? diffRows(value, otherValue ?? null, depth + 1, side, nodePath) : ''}
               </div>`;
             }
 
@@ -688,22 +822,23 @@ const appTitle = 'JSON Compare Online';
           .join('');
       }
 
-      function cardView(obj, counterpart, depth, path) {
+      function cardView(obj: MaybeJson, counterpart: MaybeJson, depth: number, path: string): string {
         if (!isObject(obj)) return '';
-        const changedKeys = getChangedKeys(obj, counterpart);
+        const changedKeys = getChangedKeys(obj, isObject(counterpart) ? counterpart : {});
         return Object.keys(obj)
           .map((key) => {
             const value = obj[key];
-            const otherValue = counterpart?.[key];
+            const otherValue = isObject(counterpart) ? counterpart[key] : null;
             const isChanged = changedKeys.has(key);
             const nodePath = `${path}.${key}`;
             if (Array.isArray(value)) {
               const open = state.expanded.has(nodePath);
-              const changeCount = countChanges(arrToObj(value), arrToObj(otherValue || []));
+              const otherArray = Array.isArray(otherValue) ? otherValue : [];
+              const changeCount = countChanges(arrToObj(value), arrToObj(otherArray));
               const children = open
                 ? value
                     .map((item, index) => {
-                      const otherItem = Array.isArray(otherValue) ? otherValue[index] : undefined;
+                      const otherItem = Array.isArray(otherValue) ? otherValue[index] : null;
                       if (isObject(item)) {
                         const itemPath = `${nodePath}[${index}]`;
                         const itemOpen = state.expanded.has(itemPath);
@@ -712,10 +847,10 @@ const appTitle = 'JSON Compare Online';
                           <button type="button" data-toggle="${itemPath}" class="flex items-center gap-1 text-left">
                             ${chevron(itemPath)}<span class="text-[11px] font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400">Item ${index}</span>${itemChanged ? changedPill('changed') : ''}
                           </button>
-                          ${itemOpen ? cardView(item, otherItem, depth + 1, itemPath) : ''}
+                          ${itemOpen ? cardView(item, otherItem ?? null, depth + 1, itemPath) : ''}
                         </div>`;
                       }
-                      const rowChanged = !deepEqual(item, otherItem);
+                      const rowChanged = !deepEqual(item, otherItem ?? null);
                       return `<div class="flex justify-between gap-3 border-b border-gray-100 py-1.5 text-[13px] last:border-b-0 dark:border-gray-800 ${rowChanged ? '-mx-2.5 rounded bg-amber-50 px-2.5 dark:bg-amber-950/30' : ''}">
                         <span class="text-xs text-gray-500 dark:text-gray-400">[${index}]</span><span class="max-w-[60%] break-words text-right font-medium">${primitive(item)}</span>
                       </div>`;
@@ -731,12 +866,12 @@ const appTitle = 'JSON Compare Online';
 
             if (isObject(value)) {
               const open = state.expanded.has(nodePath);
-              const changeCount = countChanges(value, otherValue);
+              const changeCount = countChanges(value, otherValue ?? null);
               return `<div class="${depth ? 'mt-2' : 'mt-2.5'}">
                 <button type="button" data-toggle="${nodePath}" class="group flex items-center gap-1 text-left">
                   ${chevron(nodePath)}<span class="text-[11px] font-medium uppercase tracking-wide text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-100">${titleCase(escapeHtml(key))}</span>${changeCount > 0 ? changedPill(changeCount) : ''}
                 </button>
-                ${open ? `<div class="mt-1.5 rounded-md border p-2.5 ${changeCount > 0 ? 'border-amber-400' : 'border-gray-200 dark:border-gray-700'} bg-gray-50 dark:bg-gray-800/40">${cardView(value, otherValue, depth + 1, nodePath)}</div>` : ''}
+                ${open ? `<div class="mt-1.5 rounded-md border p-2.5 ${changeCount > 0 ? 'border-amber-400' : 'border-gray-200 dark:border-gray-700'} bg-gray-50 dark:bg-gray-800/40">${cardView(value, otherValue ?? null, depth + 1, nodePath)}</div>` : ''}
               </div>`;
             }
 
@@ -748,31 +883,31 @@ const appTitle = 'JSON Compare Online';
           .join('');
       }
 
-      function panel(label, content) {
+      function panel(label: string, content: string): string {
         return `<article class="overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700">
           <header class="border-b border-gray-200 bg-gray-50 px-3.5 py-2 text-xs font-medium uppercase tracking-wide text-gray-500 dark:border-gray-700 dark:bg-gray-800/50 dark:text-gray-400">${label}</header>
           <div class="overflow-x-auto bg-white ${state.mode === 'card' ? 'p-3' : ''} dark:bg-gray-900">${content}</div>
         </article>`;
       }
 
-      function setError(element, message) {
+      function setError(element: HTMLElement, message: string): void {
         element.textContent = message;
         element.classList.toggle('hidden', !message);
       }
 
-      function setShareError(message) {
+      function setShareError(message: string): void {
         els.shareError.textContent = message;
         els.shareError.classList.toggle('hidden', !message);
       }
 
-      function setShareUrl(url) {
+      function setShareUrl(url: string | null): void {
         els.shareUrl.innerHTML = url
           ? `Share link: <a href="${url}" class="text-blue-600 underline dark:text-blue-300" target="_blank" rel="noreferrer">${url}</a>`
           : '';
         els.shareUrl.classList.toggle('hidden', !url);
       }
 
-      function getCurrentShareId() {
+      function getCurrentShareId(): string | null {
         return new URL(window.location.href).searchParams.get('shareId');
       }
 
@@ -790,17 +925,35 @@ const appTitle = 'JSON Compare Online';
           : '<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path></svg>';
       }
 
-      function setComparedData(dataA, dataB) {
+      function setComparedData(dataA: MaybeJson, dataB: MaybeJson): void {
         state.dataA = dataA;
         state.dataB = dataB;
-        const expanded = new Set();
-        collectChangedPaths(dataA, dataB, 'root', expanded);
-        state.expanded = expanded;
-        const allPaths = new Set();
-        collectAllPaths(dataA, dataB, 'root', allPaths);
-        collectAllPaths(dataB, dataA, 'root', allPaths);
-        state.allPaths = [...allPaths];
-        render();
+        // reset deepEqual result cache for new comparison
+        deepEqualCache = new WeakMap();
+
+        // show quick UI feedback and avoid blocking the main thread
+        if (els.output) els.output.innerHTML = '<div class="p-6 text-center text-sm text-gray-500">Comparing...</div>';
+        if (els.compare) els.compare.disabled = true;
+
+        // run expensive collection asynchronously so the browser can update UI
+        setTimeout(() => {
+          try {
+            const expanded = new Set<string>();
+            collectChangedPaths(dataA, dataB, 'root', expanded);
+            state.expanded = expanded;
+            const allPaths = new Set<string>();
+            collectAllPaths(dataA, dataB, 'root', allPaths);
+            collectAllPaths(dataB, dataA, 'root', allPaths);
+            state.allPaths = [...allPaths];
+            render();
+          } catch (err) {
+            // eslint-disable-next-line no-console
+            console.error('Comparison error', err);
+            if (els.output) els.output.innerHTML = '<div class="p-6 text-center text-sm text-red-600">Comparison failed. Check console for details.</div>';
+          } finally {
+            if (els.compare) els.compare.disabled = false;
+          }
+        }, 10);
       }
 
       function render() {
@@ -822,7 +975,7 @@ const appTitle = 'JSON Compare Online';
           return;
         }
 
-        const totalChanges = countChanges(state.dataA, state.dataB);
+        const totalChanges = countChanges(state.dataA ?? null, state.dataB ?? null);
         els.changeBadge.textContent = totalChanges > 0
           ? `${totalChanges} key${totalChanges === 1 ? '' : 's'} changed`
           : 'Identical';
@@ -838,7 +991,7 @@ const appTitle = 'JSON Compare Online';
         els.output.innerHTML = `<div class="grid grid-cols-1 gap-2 md:grid-cols-2">${panel(labels[0], left)}${panel(labels[1], right)}</div>`;
       }
 
-      function parseCurrentInputs() {
+      function parseCurrentInputs(): { dataA: JsonValue; dataB: JsonValue } | null {
         setError(els.errA, '');
         setError(els.errB, '');
         setShareError('');
@@ -849,18 +1002,20 @@ const appTitle = 'JSON Compare Online';
           return null;
         }
 
-        let dataA;
-        let dataB;
+        let dataA: JsonValue;
+        let dataB: JsonValue;
         try {
-          dataA = JSON.parse(els.jsonA.value);
-        } catch (error) {
-          setError(els.errA, `Invalid JSON: ${error.message}`);
+          dataA = JSON.parse(els.jsonA.value) as JsonValue;
+        } catch (error: unknown) {
+          const message = error instanceof Error ? error.message : String(error);
+          setError(els.errA, `Invalid JSON: ${message}`);
           return null;
         }
         try {
-          dataB = JSON.parse(els.jsonB.value);
-        } catch (error) {
-          setError(els.errB, `Invalid JSON: ${error.message}`);
+          dataB = JSON.parse(els.jsonB.value) as JsonValue;
+        } catch (error: unknown) {
+          const message = error instanceof Error ? error.message : String(error);
+          setError(els.errB, `Invalid JSON: ${message}`);
           return null;
         }
         return { dataA, dataB };
@@ -885,7 +1040,7 @@ const appTitle = 'JSON Compare Online';
         setInputVisibility(false);
       }
 
-      function setInputVisibility(visible) {
+      function setInputVisibility(visible: boolean): void {
         if (!els.inputSection || !els.toggleInputs) return;
         els.inputSection.classList.toggle('hidden', !visible);
         els.toggleInputs.textContent = visible ? 'Hide Inputs' : 'Edit Input';
@@ -912,7 +1067,7 @@ const appTitle = 'JSON Compare Online';
         clearAll();
       }
 
-      async function loadSharedComparison() {
+      async function loadSharedComparison(): Promise<void> {
         const id = getCurrentShareId();
         if (!id) return;
         els.share.disabled = true;
@@ -923,16 +1078,17 @@ const appTitle = 'JSON Compare Online';
           const data = await response.json();
           els.jsonA.value = JSON.stringify(data.json1, null, 2);
           els.jsonB.value = JSON.stringify(data.json2, null, 2);
-          setComparedData(data.json1, data.json2);
+          setComparedData(data.json1 as JsonValue, data.json2 as JsonValue);
           setShareUrl(window.location.href);
-        } catch (error) {
-          setShareError(error.message || 'Failed to load shared comparison.');
+        } catch (error: unknown) {
+          const message = error instanceof Error ? error.message : String(error);
+          setShareError(message || 'Failed to load shared comparison.');
         } finally {
           els.share.disabled = false;
         }
       }
 
-      async function shareComparison() {
+      async function shareComparison(): Promise<void> {
         const parsed = parseCurrentInputs();
         if (!parsed) return;
 
@@ -955,8 +1111,9 @@ const appTitle = 'JSON Compare Online';
           const shareLink = `${window.location.origin}${window.location.pathname}?shareId=${data.id}`;
           setShareUrl(shareLink);
           window.history.replaceState(null, '', shareLink);
-        } catch (error) {
-          setShareError(error.message || 'Unable to create share link.');
+        } catch (error: unknown) {
+          const message = error instanceof Error ? error.message : String(error);
+          setShareError(message || 'Unable to create share link.');
         } finally {
           els.share.disabled = false;
           els.share.textContent = 'Save';
@@ -1000,7 +1157,7 @@ const appTitle = 'JSON Compare Online';
         els.menuClose.addEventListener('click', hideMobileMenu);
       }
       if (els.mobileMenu) {
-        els.mobileMenu.querySelectorAll('a').forEach((link) => {
+        els.mobileMenu.querySelectorAll<HTMLAnchorElement>('a').forEach((link) => {
           link.addEventListener('click', hideMobileMenu);
         });
       }
@@ -1018,7 +1175,7 @@ const appTitle = 'JSON Compare Online';
         const rawA = els.jsonA.value;
         els.jsonA.value = els.jsonB.value;
         els.jsonB.value = rawA;
-        if (state.dataA || state.dataB) setComparedData(state.dataB, state.dataA);
+        if (state.dataA || state.dataB) setComparedData(state.dataB ?? null, state.dataA ?? null);
       });
       if (els.toggleInputs && els.inputSection) {
         els.toggleInputs.addEventListener('click', () => {
@@ -1037,10 +1194,12 @@ const appTitle = 'JSON Compare Online';
         state.expanded = new Set();
         render();
       });
-      els.output.addEventListener('click', (event) => {
-        const button = event.target.closest('[data-toggle]');
+      els.output.addEventListener('click', (event: MouseEvent) => {
+        const target = event.target as HTMLElement | null;
+        const button = target?.closest('[data-toggle]') as HTMLElement | null;
         if (!button) return;
         const path = button.getAttribute('data-toggle');
+        if (!path) return;
         if (state.expanded.has(path)) state.expanded.delete(path);
         else state.expanded.add(path);
         render();

@@ -1,0 +1,11 @@
+---
+import '../index.css';
+import ErrorPage from '../components/ErrorPage.astro';
+---
+
+<ErrorPage
+  statusCode={404}
+  title="Page not found"
+  description="The page you requested could not be found on JSON Compare Online."
+  message="The page you are looking for does not exist or may have been moved. Return to the homepage to compare JSON files online."
+/>

@@ -1,0 +1,11 @@
+---
+import '../index.css';
+import ErrorPage from '../components/ErrorPage.astro';
+---
+
+<ErrorPage
+  statusCode={500}
+  title="Something went wrong"
+  description="An unexpected error occurred on JSON Compare Online."
+  message="We are having trouble loading this page right now. Please try again in a moment or return to the homepage."
+/>

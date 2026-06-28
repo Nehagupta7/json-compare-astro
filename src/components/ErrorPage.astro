@@ -1,0 +1,58 @@
+---
+interface Props {
+  statusCode: number;
+  title: string;
+  description: string;
+  message: string;
+}
+
+const { statusCode, title, description, message } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="json" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>{title} | JSON Compare Online</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow" />
+    <script is:inline>
+      (() => {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (stored === 'dark' || (!stored && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100">
+    <main class="mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-4 py-12 font-sans sm:px-6">
+      <div class="w-full max-w-lg text-center">
+        <p class="text-7xl font-bold tracking-tight text-blue-600 dark:text-blue-400">{statusCode}</p>
+        <h1 class="mt-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl">{title}</h1>
+        <p class="mt-4 text-gray-700 dark:text-gray-300">{message}</p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="/"
+            class="inline-flex rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400"
+          >
+            Back to Home
+          </a>
+          <a
+            href="/contact-us"
+            class="inline-flex rounded-full border border-gray-300 px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
+          >
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
